@@ -166,6 +166,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
   myFunction(x); // Call listener function at run time
 
   x.addListener(myFunction); // Attach listener function on state changes
+  ////=============exit intent functionality============////////
+
+  document.addEventListener("mouseout", function (event) {
+    if (!event.toElement && !event.relatedTarget) {
+      setTimeout(function () {
+        modal.classList.add('show-modal');
+      }, 1000);
+    }
+  });
 });
 },{}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -195,7 +204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61755" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57887" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

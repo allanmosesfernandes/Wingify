@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
    // Your code to run since DOM is loaded and ready
-   const closeBtn = document.querySelector('.close-button');
+const closeBtn = document.querySelector('.close-button');
 const modal = document.querySelector('.modal');
 const form = document.querySelector('#form');
 const modalShow = document.querySelector('.modal.show-modal')
@@ -53,6 +53,20 @@ function myFunction(x) {
  var x = window.matchMedia("(max-width: 500px)")
  myFunction(x) // Call listener function at run time
  x.addListener(myFunction) // Attach listener function on state changes
+
+
+ ////=============exit intent functionality============////////
+
+   document.addEventListener("mouseout", (event) => {
+     if (!event.toElement && !event.relatedTarget) {
+       setTimeout(() => {
+         modal.classList.add('show-modal');
+       }, 1000)
+     }
+   })
 });
+
+
+
 
 
